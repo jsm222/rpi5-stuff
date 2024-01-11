@@ -1,0 +1,22 @@
+diff --git a/arch/arm/mach-bcm283x/init.c b/arch/arm/mach-bcm283x/init.c
+index 1c5c748484..7dffe4e1eb 100644
+--- a/arch/arm/mach-bcm283x/init.c
++++ b/arch/arm/mach-bcm283x/init.c
+@@ -72,16 +72,9 @@ static struct mm_region bcm2712_mem_map[MEM_MAP_MAX_ENTRIES] = {
+ 	{
+ 		.virt = 0x00000000UL,
+ 		.phys = 0x00000000UL,
+-		.size = 0x3f800000UL,
++		.size = 0x3fc00000UL,
+ 		.attrs = PTE_BLOCK_MEMTYPE(MT_NORMAL) |
+ 			 PTE_BLOCK_INNER_SHARE
+-	}, {
+-		.virt = 0x3f800000UL,
+-		.phys = 0x3f800000UL,
+-		.size = 0x00800000UL,
+-		.attrs = PTE_BLOCK_MEMTYPE(MT_DEVICE_NGNRNE) |
+-			 PTE_BLOCK_NON_SHARE |
+-			 PTE_BLOCK_PXN | PTE_BLOCK_UXN
+ 	}, {
+ 		/* Beginning of AXI bus where uSD controller lives */
+ 		.virt = 0x1000000000UL,
